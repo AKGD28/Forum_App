@@ -1,0 +1,9 @@
+{% if message %}
+    <p>{{ message }}</p>
+{% endif %}
+
+<ul>
+    {% for post in posts %}
+        <li>{{ post.title }}</li>
+    {% endfor %}
+</ul>

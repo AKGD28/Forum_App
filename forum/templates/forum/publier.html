@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Publier un Article{% endblock %}
+
+{% block content %}
+    <h1>Publier un Article</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="title">Titre:</label>
+        <input type="text" name="title" id="title" required>
+        <br>
+        <label for="content">Contenu:</label>
+        <textarea name="content" id="content" required></textarea>
+        <br>
+        <button type="submit">Publier</button>
+    </form>
+{% endblock %}

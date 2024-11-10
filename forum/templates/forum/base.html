@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les p'tites bricoles</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+   <header>
+    <nav class="navbar">
+        <a href="/" class="logo">Forum de Bricoleur</a>
+        <div class="nav-links">
+            <a href="/questions">Les questions</a>
+            <a href="/publish">Publier une question</a>
+            <a href="/chat">Chat</a>
+            <a href="/group">Bricolons ensemble</a>
+            <a href="/my-questions">Mes questions</a>
+            <a href="/login" class="btn-connect">Connexion</a>
+            <a href="/signup">Inscription</a>
+        </div>
+    </nav>
+</header>
+
+    <main>
+        {% block content %}
+        <!-- Contenu spécifique de chaque page sera ici -->
+        {% endblock %}
+    </main>
+</body>
+</html>

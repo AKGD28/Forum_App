@@ -1,0 +1,44 @@
+{% extends 'forum/base_generic.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Accueil</a>
+            <a href="/questions/">Les questions</a>
+            <a href="/chat/">Chat</a>
+            <a href="/ask-question/">Publier une question</a>
+            <a href="/login/">Connexion</a>
+            <a href="/about/">Bricolons ensemble</a>
+            <a href="/register/">Inscription</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Connectez-vous à votre compte</h1>
+        
+        <form method="POST">
+            {% csrf_token %}
+            
+            <label for="username">Nom d'utilisateur :</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Se connecter</button>
+        </form>
+
+        <p>Pas encore de compte ? <a href="/register/">Inscrivez-vous ici</a></p>
+    </main>
+</body>
+</html>
+{% endblock %}

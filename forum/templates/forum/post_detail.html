@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails de la publication - Les p'tites bricoles</title>
+</head>
+<body>
+    <h1>{{ post.title }}</h1>
+    <p><strong>Auteur :</strong> {{ post.author }}</p>
+    <p><strong>Description :</strong> {{ post.description }}</p>
+    <p><strong>Matériel :</strong> {{ post.material }}</p>
+    <p><strong>Étapes :</strong> {{ post.steps }}</p>
+    <a href="{% url 'posts_list' %}">Retour à la liste des publications</a>
+</body>
+</html>

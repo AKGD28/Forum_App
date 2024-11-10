@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Les Questions</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Les questions</h1>
+    </header>
+    <main>
+        <ul>
+            {% for question in questions %}
+                <li>
+                    <h2>{{ question.title }}</h2>
+                    <p>{{ question.content }}</p>
+                    <p>Posté par : {{ question.user.username }} le {{ question.created_at|date:"d/m/Y H:i" }}</p>
+                </li>
+            {% empty %}
+                <li>Aucune question n'a été publiée pour le moment.</li>
+            {% endfor %}
+        </ul>
+    </main>
+</body>
+</html>
+
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Les Questions</h1>
+<p>Voici une liste de questions publiées par les utilisateurs...</p>
+{% endblock %}
+

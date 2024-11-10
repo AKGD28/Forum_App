@@ -1,0 +1,65 @@
+{% extends 'forum/base_generic.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Accueil</a>
+            <a href="/questions/">Les questions</a>
+            <a href="/chat/">Chat</a>
+            <a href="/ask-question/">Publier une question</a>
+            <a href="/login/">Connexion</a>
+            <a href="/about/">Bricolons ensemble</a>
+            <a href="/register/">Inscription</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Bienvenue dans le chat du forum de bricolage !</h1>
+        
+        <section class="chat-box">
+            <div id="chat-messages" class="messages">
+                <!-- Les messages de chat seront affichés ici -->
+            </div>
+            
+            <form id="chat-form" method="POST" action="#">
+                {% csrf_token %}
+                <textarea id="chat-input" name="message" rows="4" placeholder="Tapez votre message..."></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        // Gestion de l'envoi des messages dans le chat
+        const chatForm = document.getElementById("chat-form");
+        const chatInput = document.getElementById("chat-input");
+        const chatMessages = document.getElementById("chat-messages");
+
+        chatForm.addEventListener("submit", function(event) {
+            event.preventDefault(); // Empêche l'envoi du formulaire pour éviter le rechargement de la page
+
+            const message = chatInput.value.trim();
+            if (message) {
+                const newMessage = document.createElement("div");
+                newMessage.classList.add("chat-message");
+                newMessage.textContent = message;
+                chatMessages.appendChild(newMessage);
+                
+                // Effacer le champ de saisie après l'envoi
+                chatInput.value = "";
+                chatMessages.scrollTop = chatMessages.scrollHeight; // Faire défiler vers le bas
+            }
+        });
+    </script>
+</body>
+</html>
+{% endblock %}

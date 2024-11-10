@@ -1,0 +1,58 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil du Forum</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Accueil</a>
+            <a href="/questions/">Les questions</a>
+            <a href="/chat/">Chat</a>
+            <a href="/ask-question/">Publier une question</a>
+            <a href="/login/">Connexion</a>
+            <a href="/about/">Bricolons ensemble</a>
+            <a href="/register/">Inscription</a>
+            <a href="/login/">Connectez-vous</a>
+            
+        </nav>
+    </header>
+    <main>
+        <h1>Bienvenue sur notre Forum de Bricolage !</h1>
+        <p>Découvrez et partagez des astuces de bricolage avec notre communauté passionnée.</p>
+        
+        <section class="recent-questions">
+            <h2>Questions récentes</h2>
+            <ul>
+                <li><a href="/questions/question1">Comment réparer une porte qui grince ?</a></li>
+                <li><a href="/questions/question2">Quels sont les outils essentiels pour le bricolage ?</a></li>
+                <li><a href="/questions/question3">Comment installer une étagère murale ?</a></li>
+            </ul>
+        </section>
+
+        <section class="popular-topics">
+            <h2>Sujets populaires</h2>
+            <ul>
+                <li><a href="/questions/topic1">Réparation de meubles</a></li>
+                <li><a href="/questions/topic2">Peinture et décoration</a></li>
+                <li><a href="/questions/topic3">Plomberie à domicile</a></li>
+            </ul>
+        </section>
+
+        <section class="community">
+            <h2>Rejoignez notre communauté</h2>
+            <p>Inscrivez-vous pour poser vos questions et obtenir des réponses d'experts !</p>
+            <a href="/register" class="button">S'inscrire</a>
+        </section>
+    </main>
+</body>
+</html>
+
+
+{% endblock %}

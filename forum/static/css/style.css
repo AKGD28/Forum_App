@@ -1,0 +1,111 @@
+/* Style général */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #E0BBE4, #957DAD, #D291BC, #FEC8D8);
+    color: #333;
+}
+
+/* Header et navigation */
+header {
+    background: linear-gradient(to right, #B39DDB, #CE93D8);
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 8px 12px;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Titre et sections */
+main {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #6A1B9A;
+}
+
+section {
+    margin: 20px 0;
+}
+
+h2 {
+    color: #8E24AA;
+    font-size: 1.8em;
+}
+
+p {
+    color: #555;
+    font-size: 1.1em;
+}
+
+/* Bouton d'inscription */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 15px;
+    background-color: #F48FB1;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #F06292;
+}
+
+/* Listes de liens */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li a {
+    color: #6A1B9A;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main {
+        padding: 15px;
+    }
+}
